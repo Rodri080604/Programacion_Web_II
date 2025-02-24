@@ -1,0 +1,45 @@
+
+
+
+/*
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+order
+
+*/
+.headerPrincipal-nav{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.headerPrincipal-nav-link{
+    justify-content: center;
+    
+}
+.contenidoPrincipal{
+    align-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.contenidoPrincipal-productos{
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center; 
+    gap: 10px; 
+    padding: 0;
+    list-style: none; 
+}
+
+
+.containermain2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 0;
+    
+}

@@ -1,5 +1,6 @@
-.elemento{display: flex;
-    background-color: #f4f6f1;
+.elemento{
+    display: flex;
+    background-color: #37c1de;
     padding-top: 2rem;
     padding-bottom: 2rem;
     flex-direction: column;
@@ -33,6 +34,9 @@
     font-size: 2rem;
 }
 .elemento__boton{
+    background-color: rgb(200, 251, 250);
+    padding: 1rem;
+    border-radius: 20%;
     font-family: 'Montserrat',sans-serif;
     color: #e21919;
     border-color: 3px solid #e21919;

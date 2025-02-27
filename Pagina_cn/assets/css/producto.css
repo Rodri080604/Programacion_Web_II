@@ -1,0 +1,48 @@
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    background-color: #009ab6;
+    padding-top: 5cqi;
+    padding-bottom: 2rem;
+}
+.pagina__titulo{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.pagina__desc{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin: 0 auto 2.5rem;
+}
+.card__boton{
+    display: flex ;
+    background-color: aqua;
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.producto__card{
+    background-color: rgb(192, 194, 200);
+    padding: 1rem;
+}
+.card_card--prod1{
+    flex-direction: ;
+    background-color: rgb(21, 64, 165);
+    padding: 1rem;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin: 0 auto 2.5rem;
+}

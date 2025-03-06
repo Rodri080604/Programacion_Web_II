@@ -1,12 +1,15 @@
 .mensaje{
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
+    background-color: #00506a;
+    
 }
 .mensaje__lista{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+    justify-content: space-around;
+    padding: 0.5rem 2rem 5rem 0rem;
+} 
 .mensaje__item{
     max-width: 300px;
     box-sizing: border-box;
@@ -21,7 +24,7 @@
     width: 50px;
 }
 .mensaje__item__titulo{
-    color: cadetblue;
+    color: rgb(149, 218, 220);
     font-family: 'Montserrat',sans-serif;
     font-weight: 600;font-size: 1rem;
     text-transform: uppercase;
@@ -31,4 +34,49 @@
 .mensaje__item__texto{
     line-height: normal;
     font-family: 'Montserrat',sans-serif;
+}
+
+
+.nosotros{
+    background-color: #00506a;
+    display: flex;
+}
+.nosotros__conteiner{
+    display: flex;
+}
+.nosotros__contenido{
+    padding: 3rem;
+}
+.nosotros__titulo{
+    color: antiquewhite;
+    text-transform: uppercase;
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.nosotros__texto{
+    font-family: 'Monserrat',sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.nosotros__imagen{
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .mensaje{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nosotros{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nosotros__imagen{
+        width: auto;
+        height: auto;
+    }
 }

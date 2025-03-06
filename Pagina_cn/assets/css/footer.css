@@ -1,0 +1,48 @@
+/* Estilo general del footer */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002f47;
+    color: #ffffff;
+    padding: 20px;
+}
+
+
+.footer_logo {
+    width: 100px;
+    height: auto;
+}
+
+.footer__nav ul {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer__link a {
+    color: #ffffff;
+    text-decoration: solid;
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer_logo {
+        margin-bottom: 10px;
+    }
+}

@@ -1,48 +1,104 @@
-.producto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    background-color: #009ab6;
-    padding-top: 5cqi;
-    padding-bottom: 2rem;
-}
-.pagina__titulo{
-    font-family: 'Montserrat',sans-serif;
-    font-size: 3rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-.pagina__desc{
-    font-family: 'Montserrat',sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    margin: 0 auto 2.5rem;
-}
-.card__boton{
-    display: flex ;
-    background-color: aqua;
-    font-family: 'Montserrat',sans-serif;
+.producto {
     text-align: center;
-    width: 50%;
-    padding: 0.5rem;
-    border-radius: 10px;
+    padding: 20px;
+    background-color: #009ab6;
 }
-.producto__card{
-    background-color: rgb(192, 194, 200);
-    padding: 1rem;
+
+.producto__titulo {
+    color: beige;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
-.card_card--prod1{
-    flex-direction: ;
-    background-color: rgb(21, 64, 165);
-    padding: 1rem;
-    font-family: 'Montserrat',sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    margin: 0 auto 2.5rem;
+
+.producto__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.card_card--prod1 {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+}
+
+
+
+.card__titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card__contenido {
+    text-align: left;
+}
+
+.card__precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00bbff;
+}
+
+.card__desc {
+    margin: 10px 0;
+    color: #000000;
+}
+
+.card__boton {
+    display: inline-block;
+    background-color: #0f5ebe;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+.card__boton:hover {
+    background-color: #01469a;
+}
+/*-------------------------------------------*/
+.contacto{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    background-color: #00748f;
+}
+.contacto__titulo{
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.contacto__descripcion{
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.artic_01{
+    margin-bottom: 1.5rem;
+}
+.contacto__contenido{
+    justify-items: flex-start;
+    padding: 2rem;
+}
+.ima_prod3{
+    display: flex;
+    width: 180px;
+    height: 200px;
+}
+
+
+@media (max-width: 600px) {
+    .producto__card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contacto{
+        flex-direction: column;
+        align-items: center;
+    }
 }

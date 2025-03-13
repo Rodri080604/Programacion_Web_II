@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenir una accion por defecto</title>
+</head>
+<body>
+    <div id="enlace" herf="httpd://www.facebook">Enlace</div>
+    <script>
+        const enlace=document.getElementById('enlace')
+        enlace.addEventListener('click',(evento)=>{
+            evento.preventDefault()
+            alert('enlace bloqueado')
+        })
+    </script>
+</body>
+</html>

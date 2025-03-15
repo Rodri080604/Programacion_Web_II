@@ -91,12 +91,12 @@ body {
 }
 
 .contenidoPrincipal-productos-link:nth-child(even) a:before {
-	background: url(../img/background1.svg) no-repeat;	
+	background: url(../img/background01.svg) no-repeat;	
 	background-size: cover;
 }
 
 .contenidoPrincipal-productos-link:nth-child(odd) a:before {
-	background: url(../img/background2.svg) no-repeat;
+	background: url(../img/background02.svg) no-repeat;
 	background-size: cover;
 }
 
@@ -143,6 +143,16 @@ body {
 	background-color: #0A0A4A;
 	padding-top: 20px;
 }
+.logo-polo-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+}
+
+.logo-polo {
+    width: 30px; /* Ajusta el tamaño según lo necesites */
+    height: auto;
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+}
 
 .rodapePrincipal .subtitulo {
 	color: #FFF;
@@ -177,57 +187,88 @@ body {
 .navmap-list-title-polo { color: #6725d2; border-left: 4px solid #25D285; }
 
 .rodapePrincipal-patrocinadores {
-	margin-top: 30px;
-	background: #020222;
-	padding: 20px 0;
+    margin-top: 30px;
+    background: #212160;
+    padding: 40px 20px; 
+    color: #fff;
+    text-align: center;
+}
+
+.containerFoter {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px; 
+}
+
+.rodapePrincipal-patrocinadores-list-link img {
+    width: 60px;
+    height: auto;
 }
 
 .rodapePrincipal-contatoForm {
-	margin-top: 20px;
-	text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .rodapePrincipal-contatoForm label[for=email-contato] {
-	font-weight: bold;
-	font-size: 14px;
-	color: #000;
-	margin-bottom: 5px;
-	display: block;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff; 
+    margin-bottom: 8px;
+    display: block;
 }
 
 .rodapePrincipal-contatoForm-emailInput {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 12px;
+    width: 100%; 
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 .rodapePrincipal-contatoForm-submit {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	background-color: #4DBA7A;
-	color: #FFF;
-	cursor: pointer;
-	
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #4DBA7A;
+    color: #FFF;
+    cursor: pointer;
+    padding: 12px 20px; 
+    font-size: 16px;
+    width: 100%; 
+    border: none;
+    transition: background-color 0.3s ease; 
+}
+
+.rodapePrincipal-contatoForm-submit:hover {
+    background-color: #39965A; 
 }
 
 .rodapePrincipal-contatoForm-submit,
 .rodapePrincipal-contatoForm-emailInput {
-	outline: 0;
-	border: 1px solid #4DBA7A;
-	box-sizing: border-box;
-	font-size: 16px;
+    outline: 0;
+    border: 1px solid #4DBA7A;
+    box-sizing: border-box;
 }
-
-
 
 .rodapePrincipal-contatoForm-legend {
-	margin-bottom: 10px;
-	color: white;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 18px; 
+    font-weight: bold;
 }
-
-
-
-
 @media(min-width: 769px) {
 
 	.container {
@@ -303,4 +344,4 @@ body {
 
 }
 
-
+/*#212160;*/

@@ -30,3 +30,11 @@
     padding: 0;
     
 }
+.containerFoter{
+    display: flex;
+    flex-direction: row;
+}
+.rodapePrincipal-patrocinadores-list{
+    flex-direction: row;
+    justify-content: space-around;
+}

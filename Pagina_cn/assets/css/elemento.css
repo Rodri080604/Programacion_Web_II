@@ -34,11 +34,11 @@
     font-size: 2rem;
 }
 .elemento__boton{
-    background-color: rgb(200, 251, 250);
+    background-color: rgb(206, 230, 230);
     padding: 1rem;
     border-radius: 10%;
     font-family: 'Montserrat',sans-serif;
-    color: #e21919;
+    color: #00246d;
     justify-content: space-around;
     transition: background-color 0.2s;
 }

@@ -15,7 +15,7 @@
 </head>
 <body>
     <header class="head">
-        <img class="head__logo" src="assets/img/logo.png" alt="logo">
+        <img class="head__logo" src="assets/img/logo02.png" alt="logo">
         <nav class="head__nav">
             <ul>
                 <li class="head__link"><a href="#">inicio</a></li>
@@ -36,7 +36,7 @@
             <h2 class="elemento__titulo">Elemento 1</h2>
             <a href="#">
                 <figure class="elemento__figura">
-                    <img class="elemento__figura--imagen" src="assets/img/prod1.jpg" alt="img">
+                    <img class="elemento__figura--imagen" src="assets/img/prod01.jpg" alt="img">
                     <figc class="elemento__figura--texto">texto de figura</figc>
                 </figure>
             </a>
@@ -50,6 +50,9 @@
                 <li class="card_card--prod1">
                     <h3 class="card__titulo">Producto1</h3>
                     <article class="card__contenido">
+                        <form class="imaProductos">
+                            <img src="assets/img/prod03.jpg" alt="">
+                        </form>
                         <p class="card__precio">0004</p>
                         <p class="card__desc">descripcion del producto</p>
                         <a class="card__boton" href="#">texto boton</a>
@@ -58,6 +61,9 @@
                 <li class="card_card--prod1">
                     <h3 class="card__titulo">Producto1</h3>
                     <article class="card__contenido">
+                        <form class="imaProductos">
+                            <img src="assets/img/prod02.jpg" alt="">
+                        </form>
                         <p class="card__precio">0004</p>
                         <p class="card__desc">descripcion del producto</p>
                         <a class="card__boton" href="#">texto boton</a>
@@ -66,6 +72,9 @@
                 <li class="card_card--prod1">
                     <h3 class="card__titulo">Producto1</h3>
                     <article class="card__contenido">
+                        <form class="imaProductos">
+                            <img src="assets/img/pord04.jpg" alt="">
+                        </form>
                         <p class="card__precio">0004</p>
                         <p class="card__desc">descripcion del producto</p>
                         <a class="card__boton" href="#">texto boton</a>
@@ -78,11 +87,13 @@
                 <h2 class="contacto__titulo"> Contacto</h2>
 
                 <p class="contacto__descripcion">descripcion de contacto</p>
-                <article class="artic_01">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quas velit, impedit vel perspiciatis quidem eos accusamus quis distinctio et amet magnam sint assumenda nihil doloremque quisquam, rem porro nam?
+                <article class="artic_01">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, porro. Obcaecati accusantium, quas ipsum, sint ullam labore consequatur reiciendis magni natus, distinctio reprehenderit perspiciatis? Tempora corrupti inventore dolores quaerat nostrum.
+                    Eius fugit, quas blanditiis vero labore beatae dolorem deserunt voluptate in odit, sint esse cupiditate impedit maxime quis ducimus veritatis mollitia quasi iste quae laborum corrupti. Illum error voluptate animi.
                 </article>
 
             </div>
-            <img class="ima_prod3"  src="assets/img/prod3.jpg" alt="img">
+            <img class="ima_prod3"  src="assets/img/prod03.jpg" alt="img">
             
         </section>
 
@@ -90,14 +101,24 @@
         <section class="mensaje">
             <ul class="mensaje__lista">
                 <li class="mensaje__item mensaje__logo">
+                    <form action="">
+                        <img src="assets/img/perfil01.jpg" alt="">
+                    </form>
                     <h2 class="mensaje__item__titulo">mensaje 1</h2>
                     <p class="mensaje__item__texto">texto del mensaje1 </p>
                 </li>
+                
                 <li class="mensaje__item mensaje__logo">
+                    <form action="">
+                        <img src="assets/img/perfil02.jpg" alt="">
+                    </form>
                     <h2 class="mensaje__item__titulo">mensaje 2</h2>
                     <p class="mensaje__item__texto">texto del mensaje2 </p>
                 </li>
                 <li class="mensaje__item mensaje__logo">
+                    <form action="">
+                        <img src="assets/img/perfil03.jpg" alt="">
+                    </form>
                     <h2 class="mensaje__item__titulo">mensaje 3</h2>
                     <p class="mensaje__item__texto">texto del mensaje3 </p>
                 </li>
@@ -114,25 +135,32 @@
 
                 </div>
             </div>
-            <img class="nosotros__imagen" src="assets/img/perfil1.jpg" alt="img">
+            <img class="nosotros__imagen" src="assets/img/perfil01.jpg" alt="img">
 
         </section>
     </main>
 
     <footer class="footer">
-        <img class="footer_logo" src="assets/img/logo.png" alt="logo">
-        <nav class="footer__nav">
-            <ul>
-                <li class="footer__link"><a href="#">inicio</a></li>
-                <li class="footer__link"><a href="#">portada</a></li>
-                <li class="footer__link"><a href="#">seccion1</a></li>
-                <li class="footer__link"><a href="#">seccion2</a></li>
-                <li class="footer__link"><a href="#">seccion3</a></li>
-            </ul>
-             
-        </nav>
-
+        <div class="footer__container">
+            <img class="footer_logo" src="assets/img/logo02.png" alt="Cartoon Network Logo">
+            <nav class="footer__nav">
+                <ul>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/" target="_blank">Home</a></li>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/videos" target="_blank">Videos</a></li>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/games" target="_blank">Games</a></li>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/apps" target="_blank">Apps</a></li>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/shows" target="_blank">Shows</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__social">
+            <a href="https://www.youtube.com/@CartoonLA" target="_blank"><img class="footer__icon" src="assets/img/YOUTUBE.png" alt="YouTube"></a>
+            <a href="https://twitter.com/cartoonnetwork" target="_blank"><img class="footer__icon" src="assets/img/Twitter.png" alt="Twitter"></a>
+            <a href="https://www.tiktok.com/@cartoonnetwork" target="_blank"><img class="footer__icon" src="assets/img/Tik Tok.png" alt="TikTok"></a>
+        </div>
+        <p class="footer__copyright">&copy; 2025 Cartoon Network. All rights reserved.</p>
     </footer>
+    
     
 </body>
 </html>

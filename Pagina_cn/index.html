@@ -124,8 +124,24 @@
                 </li>
 
             </ul>
-
+            <button id="addMessageBtn">Añadir Mensaje</button>
         </section>
+
+
+        <div id="messageModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Nuevo Mensaje</h2>
+                <textarea id="messageText" placeholder="Escribe tu mensaje"></textarea>
+                <select id="profileSelect">
+                    <option value="assets/img/perfil01.jpg">Perfil 1</option>
+                    <option value="assets/img/perfil02.jpg">Perfil 2</option>
+                    <option value="assets/img/perfil03.jpg">Perfil 3</option>
+                </select>
+                <button id="submitMessage">Agregar</button>
+                <button id="closeModal">Cancelar</button>
+            </div>
+        </div>
+
 
         <section class="nosotros">
             <div class="nosotros__conteiner">
@@ -150,6 +166,7 @@
                     <li class="footer__link"><a href="https://www.cartoonnetwork.com/games" target="_blank">Games</a></li>
                     <li class="footer__link"><a href="https://www.cartoonnetwork.com/apps" target="_blank">Apps</a></li>
                     <li class="footer__link"><a href="https://www.cartoonnetwork.com/shows" target="_blank">Shows</a></li>
+                    <li class="footer__link"><a href="https://www.cartoonnetwork.com/shows" target="_blank">Agregar mensaje</a></li>
                 </ul>
             </nav>
         </div>
@@ -160,7 +177,7 @@
         </div>
         <p class="footer__copyright">&copy; 2025 Cartoon Network. All rights reserved.</p>
     </footer>
-    
+    <script type="module" src="script.js"></script>
     
 </body>
 </html>

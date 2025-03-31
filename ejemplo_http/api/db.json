@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "titulo": "Nuevo Post Creado",
+      "descripcion": "Econtenido ",
+      "fecha": "2025-03-27"
+    },
+    {
+      "id": "9047",
+      "titulo": "Nuevo Post",
+      "descripcion": "Nueva Descripcion ",
+      "fecha": "2025-03-27T16:22:35.950Z"
+    },
+    {
+      "id": "8b46",
+      "titulo": "Nuevo Post",
+      "descripcion": "Nueva Descripcion ",
+      "fecha": "2025-03-31T12:08:34.732Z"
+    }
+  ]
+}

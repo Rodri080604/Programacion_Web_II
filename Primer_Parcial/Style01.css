@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+  }
+  
+  main {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(62, 161, 219, 1) 11.2%,
+      rgba(93, 52, 236, 1) 100.2%
+    );
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  #container {
+    width: 80vw;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+  
+  #title {
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 15px;
+  }
+  /*Input Formulario*/
+  .newItem {
+    border: none;
+    padding: 10px;
+    border: 1px solid #eee;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .newItem::placeholder {
+    padding: 0px;
+  }
+  /*Boton Agregar Tarea*/
+  #addBtn:hover {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(62, 161, 219, 1) 11.2%,
+      rgba(93, 52, 236, 0.8) 100.2%
+    );
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(71, 71, 71, 0.16); /* Sombra al pasar el mouse */
+  }
+  #addBtn {
+    padding: 10px 15px;
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(62, 161, 219, 1) 11.2%,
+      rgba(93, 52, 236, 1) 100.2%
+    );
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  /*Lista de Tareas*/
+  .taskList {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0;
+    margin: 10px 0;
+    background-color: #f9f9f9; /* Fondo claro */
+    border: 1px solid #ddd; /* Borde alrededor de la lista */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  .taskList .item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .taskList .item:hover {
+    background-color: #e6f7ff; /* Fondo azul claro al pasar el mouse */
+    cursor: pointer;
+}
+  
+
+
+/*-------------------------------------*/
+/*Botones de acción en cada tarea*/
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toggleBtn {
+  background-color: #1b263b ;
+  color: white;
+}
+
+.countBtn {
+  background-color: #ef233c;
+  color: white;
+}

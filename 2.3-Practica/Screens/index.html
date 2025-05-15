@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parque de Diversiones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>¡Bienvenidos al Parque de Diversiones Estelar!</h1>
+    <p>Disfruta de atracciones, eventos y más</p>
+  </header>
+
+  <main>
+    <!-- Perfil -->
+    <section id="perfil">
+      <h2>Perfiles de Visitantes</h2>
+      <table data-table="perfil">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Tipo de Pase</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <form id="form-perfil">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Email" required>
+        <select required>
+          <option value="Regular">Regular</option>
+          <option value="VIP">VIP</option>
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+
+    <!-- Atracciones -->
+    <section id="atracciones">
+      <h2>Atracciones</h2>
+      <div class="grid" data-table="atracciones"></div>
+    </section>
+
+    <!-- Eventos -->
+    <section id="eventos">
+      <h2>Eventos Especiales</h2>
+      <div class="grid" data-table="eventos"></div>
+    </section>
+
+    <!-- Boletos -->
+    <section id="boletos">
+      <h2>Boletos</h2>
+      <div class="grid" data-table="boletos"></div>
+    </section>
+
+    <!-- Comentarios -->
+    <section id="comentarios">
+      <h2>Comentarios de Visitantes</h2>
+      <div class="grid" data-table="comentarios"></div>
+      <form id="form-comentarios">
+        <input type="text" placeholder="Tu nombre" required>
+        <textarea placeholder="Tu comentario" required></textarea>
+        <input type="number" min="1" max="5" placeholder="Calificación (1-5)" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Parque de Diversiones Estelar</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

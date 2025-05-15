@@ -1,0 +1,79 @@
+{
+  "perfil": [
+    { "id": 1, 
+    "nombre": "Juan Pérez", 
+    "email": "juan@example.com", 
+    "tipoPase": "VIP" 
+    },
+    { "id": 2, 
+    "nombre": "Ana Gómez", 
+    "email": "ana@example.com", 
+    "tipoPase": "Regular" 
+    }
+  ],
+
+
+
+  "atracciones": [
+    { "id": 1, 
+    "nombre": "Montaña Rusa", 
+    "tipo": "Adrenalina", 
+    "alturaMinima": 120, 
+    "duracion": "2 min" 
+    },
+    { "id": 2, 
+    "nombre": "Carrusel", 
+    "tipo": "Familiar", 
+    "alturaMinima": 90, 
+    "duracion": "3 min" 
+    }
+  ],
+
+
+
+  "eventos": [
+    { "id": 1, 
+    "nombre": "Show de Fuegos Artificiales", 
+    "fecha": "2025-04-25", 
+    "hora": "20:00", 
+    "descripcion": "Espectáculo nocturno" 
+    },
+    { "id": 2, 
+    "nombre": "Concierto de Verano", 
+    "fecha": "2025-05-01", 
+    "hora": "18:00", 
+    "descripcion": "Bandas locales" 
+    }
+  ],
+
+
+
+  "boletos": [
+    { "id": 1, 
+    "tipo": "Regular", 
+    "precio": 50, 
+    "disponibilidad": 100 
+    },
+    { "id": 2, 
+    "tipo": "VIP", 
+    "precio": 100, 
+    "disponibilidad": 20 
+    }
+  ],
+
+
+
+
+  "comentarios": [
+    { "id": 1, 
+    "usuario": "Juan Pérez", 
+    "comentario": "¡Increíble experiencia!", 
+    "calificacion": 5 
+    },
+    { "id": 2, 
+    "usuario": "Ana Gómez", 
+    "comentario": "Muy divertido, pero largas filas", 
+    "calificacion": 4 
+    }
+  ]
+}

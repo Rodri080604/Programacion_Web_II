@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doguito Petshop | Lista de Mascotas</title>
+    <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/card.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/table.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/modal.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="../assets/img/doguitoadm.svg"
+        alt="Logo Doguito"
+        class="header__logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="dashboard.html">Dashboard</a></li>
+          <li class="header__link"><a href="lista_producto.html">Productos</a></li>
+          <li class="header__link">
+            <a href="lista_cliente.html">Clientes</a>
+          </li>
+          <li class="header__link"><a href="lista_mascota.html">Pets</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container flex flex--center flex--column">
+      <section class="card">
+        <h1 class="card__title">Mascotas</h1>
+        <a href="registrar_mascota.html" class="button">Nueva Mascota</a>
+        <table class="table" id="tabla-mascotas">
+          <thead>
+            <tr>
+              <th class="table__column--nombre">Nombre</th>
+              <th class="table__column--duenho">Duenho</th>
+              <th class="table__column--acciones">Acciones</th>
+            </tr>
+          </thead>
+          <tbody data-tabla>
+            <!-- Los datos de las mascotas se cargarán dinámicamente aquí -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="../controllers/mascota_controller.js" type="module"></script>
+  </body>
+</html>

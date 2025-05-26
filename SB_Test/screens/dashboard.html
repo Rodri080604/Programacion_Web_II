@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doguito Petshop | Dashboard</title>
+    <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" /> 
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="../assets/img/doguitoadm.svg"
+        alt="Logotipo Doguito"
+        class="header__logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="dashboard.html">Dashboard</a></li>
+          <li class="header__link"><a href="lista_producto.html">Productos</a></li>
+          <li class="header__link"><a href="lista_cliente.html">Clientes</a></li>
+          <li class="header__link"><a href="lista_mascota.html">Mascotas</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="dashboard-welcome">
+        <h1 class="dashboard-welcome__title">¡Bienvenido al Dashboard!</h1>
+        <p class="dashboard-welcome__message">Administra tus productos, clientes y mascotas fácilmente.</p>
+      </section>
+
+      <section class="dashboard-cards">
+        <a href="lista_producto.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Productos</h2>
+          <p class="dashboard-card__description">Gestiona el inventario de productos.</p>
+        </a>
+        <a href="lista_cliente.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Clientes</h2>
+          <p class="dashboard-card__description">Administra la información de tus clientes.</p>
+        </a>
+        <a href="lista_mascota.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Mascotas</h2>
+          <p class="dashboard-card__description">Lleva un registro de las mascotas.</p>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

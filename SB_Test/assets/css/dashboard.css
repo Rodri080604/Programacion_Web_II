@@ -1,0 +1,79 @@
+.dashboard-welcome {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--contrast-ligth);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-welcome__title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color); /* Assuming you have a primary color variable */
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-welcome__message {
+    font-size: 1.1rem;
+    color: var(--text-color); /* Assuming you have a text color variable */
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.dashboard-card {
+    background-color: var(--contrast-ligth);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(33.333% - 1rem); /* Adjust for 3 cards per row with gap */
+    min-width: 250px; /* Minimum width for smaller screens */
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card__title {
+    font-size: 1.75rem;
+    font-weight: 700; /* Montserrat bold */
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-card__description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .dashboard-card {
+        flex-basis: calc(50% - 0.75rem); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-welcome__title {
+        font-size: 2rem;
+    }
+    .dashboard-welcome__message {
+        font-size: 1rem;
+    }
+    .dashboard-card {
+        flex-basis: 100%; /* 1 card per row */
+    }
+    .dashboard-card__title {
+        font-size: 1.5rem;
+    }
+}

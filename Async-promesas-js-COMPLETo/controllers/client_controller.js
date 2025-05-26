@@ -73,10 +73,10 @@ clientService
     })
     .catch((error) => alert("Ocurrió un error"));*/
 
-
+/*
 import { v4 as uuidv4 } from 'uuid';
-const SUPABASE_URL = 'https://ixjrfiulkogielccnatb.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4anJmaXVsa29naWVsY2NuYXRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzcwMDYsImV4cCI6MjA2MjQ1MzAwNn0.KPUMwvDbuJ09rWemtgTmSxQWdpgyw6n0Z8FWWv63o_I';
+const supabaseUrl = 'https://ixjrfiulkogielccnatb.supabase.co'; // Replace with your Supabase URL
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4anJmaXVsa29naWVsY2NuYXRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzcwMDYsImV4cCI6MjA2MjQ1MzAwNn0.KPUMwvDbuJ09rWemtgTmSxQWdpgyw6n0Z8FWWv63o_I'; // Replace with your Supabase Anon Key
 const TABLE = 'perfil';
 const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`;
 const HEADERS = {
@@ -154,6 +154,77 @@ const actualizarCliente = (nombre, correo, id) => {
             console.error("Error en actualizarCliente:", error);
             throw error;
         });
+};
+
+export const clientService = {
+    listaClientes,
+    crearCliente,
+    eliminarCliente,
+    clientes,
+    actualizarCliente
+};*/
+
+
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://ixjrfiulkogielccnatb.supabase.co'; // Replace with your Supabase URL
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4anJmaXVsa29naWVsY2NuYXRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzcwMDYsImV4cCI6MjA2MjQ1MzAwNn0.KPUMwvDbuJ09rWemtgTmSxQWdpgyw6n0Z8FWWv63o_I'; // Replace with your Supabase Anon Key
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+const listaClientes = async () => {
+    try {
+        const { data, error } = await supabase.from('perfil').select('*');
+        if (error) throw new Error(`Error al obtener perfiles: ${error.message}`);
+        return data;
+    } catch (err) {
+        console.error("Error en listaClientes:", err);
+        throw err;
+    }
+};
+
+const crearCliente = async (nombre, correo) => {
+    try {
+        const { data, error } = await supabase.from('perfil').insert([{ nombre, correo }]).select();
+        if (error) throw new Error(`Error al crear cliente: ${error.message}`);
+        return data[0];
+    } catch (err) {
+        console.error("Error en crearCliente:", err);
+        throw err;
+    }
+};
+
+const eliminarCliente = async (id) => {
+    try {
+        const { error } = await supabase.from('perfil').delete().eq('id', id);
+        if (error) throw new Error(`Error al eliminar cliente: ${error.message}`);
+        return { success: true };
+    } catch (err) {
+        console.error("Error en eliminarCliente:", err);
+        throw err;
+    }
+};
+
+const clientes = async (id) => {
+    try {
+        const { data, error } = await supabase.from('perfil').select('*').eq('id', id).single();
+        if (error) throw new Error(`Error al obtener cliente: ${error.message}`);
+        return data;
+    } catch (err) {
+        console.error("Error en clientes:", err);
+        throw err;
+    }
+};
+
+const actualizarCliente = async (nombre, correo, id) => {
+    try {
+        const { data, error } = await supabase.from('perfil').update({ nombre, correo }).eq('id', id).select();
+        if (error) throw new Error(`Error al actualizar cliente: ${error.message}`);
+        return data[0];
+    } catch (err) {
+        console.error("Error en actualizarCliente:", err);
+        throw err;
+    }
 };
 
 export const clientService = {

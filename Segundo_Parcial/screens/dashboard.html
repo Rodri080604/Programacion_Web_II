@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doguito Petshop | Dashboard</title>
+    <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" /> 
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="../assets/img/doguitoadm.svg"
+        alt="Logotipo Doguito"
+        class="header__logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="dashboard.html">Dashboard</a></li>
+          <li class="header__link"><a href="lista_pelicula.html">Peliculas</a></li>
+          <li class="header__link"><a href="lista_salas.html">Salas</a></li>
+          <li class="header__link"><a href="lista_cliente.html">Clientes</a></li>
+          <li class="header__link"><a href="lista_boletos.html">Boletos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="dashboard-welcome">
+        <h1 class="dashboard-welcome__title">¡Bienvenido al Dashboard!</h1>
+        <p class="dashboard-welcome__message">Administra tus productos, clientes y mascotas fácilmente.</p>
+      </section>
+
+      <section class="dashboard-cards">
+        <a href="lista_producto.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Productos</h2>
+          <p class="dashboard-card__description">Gestiona el inventario de productos.</p>
+        </a>
+        <a href="lista_cliente.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Clientes</h2>
+          <p class="dashboard-card__description">Administra la información de tus clientes.</p>
+        </a>
+        <a href="lista_mascota.html" class="dashboard-card">
+          <h2 class="dashboard-card__title">Mascotas</h2>
+          <p class="dashboard-card__description">Lleva un registro de las mascotas.</p>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Películas: Contiene información básica de las películas, como título, duración, género y clasificación. El campo id_pelicula es la clave primaria.
+Salas: Registra las salas del cine con un nombre y su capacidad de asientos. El campo id_sala es la clave primaria.
+Horarios: Vincula películas y salas con una fecha y hora específica de proyección. Usa claves foráneas para relacionar con peliculas y salas.
+Clientes: Almacena datos de los clientes, con un campo email único para evitar duplicados. El campo id_cliente es la clave primaria.
+Boletos: Registra cada boleto vendido, vinculando al cliente, el horario y el asiento asignado. Incluye el precio y la fecha de compra.
+
+
+
+
+
+-- Creación de la base de datos
+CREATE DATABASE cine_admin;
+USE cine_admin;
+
+-- Tabla para almacenar las películas
+CREATE TABLE peliculas (
+    id_pelicula INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    duracion INT NOT NULL, -- Duración en minutos
+    genero VARCHAR(50),
+    clasificacion VARCHAR(10) -- Ejemplo: PG, PG-13, R
+);
+
+-- Tabla para almacenar las salas
+CREATE TABLE salas (
+    id_sala INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    capacidad INT NOT NULL -- Número de asientos
+);
+
+-- Tabla para almacenar los horarios de proyección
+CREATE TABLE horarios (
+    id_horario INT AUTO_INCREMENT PRIMARY KEY,
+    id_pelicula INT,
+    id_sala INT,
+    fecha_hora DATETIME NOT NULL,
+    FOREIGN KEY (id_pelicula) REFERENCES peliculas(id_pelicula),
+    FOREIGN KEY (id_sala) REFERENCES salas(id_sala)
+);
+
+-- Tabla para almacenar los clientes
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    telefono VARCHAR(15)
+);
+
+-- Tabla para almacenar los boletos
+CREATE TABLE boletos (
+    id_boleto INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_horario INT,
+    asiento VARCHAR(10), -- Ejemplo: A1, B12
+    precio DECIMAL(10, 2) NOT NULL,
+    fecha_compra DATETIME NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_horario) REFERENCES horarios(id_horario)
+);
+
+-- Inserciones de ejemplo
+INSERT INTO peliculas (titulo, duracion, genero, clasificacion) VALUES
+('El Viaje Estelar', 120, 'Ciencia Ficción', 'PG-13'),
+('Aventura en la Jungla', 95, 'Aventura', 'PG');
+
+INSERT INTO salas (nombre, capacidad) VALUES
+('Sala 1', 100),
+('Sala 2', 80);
+
+INSERT INTO horarios (id_pelicula, id_sala, fecha_hora) VALUES
+(1, 1, '2025-05-23 18:00:00'),
+(2, 2, '2025-05-23 20:00:00');
+
+INSERT INTO clientes (nombre, email, telefono) VALUES
+('Juan Pérez', 'juan.perez@email.com', '555-1234'),
+('María Gómez', 'maria.gomez@email.com', '555-5678');
+
+INSERT INTO boletos (id_cliente, id_horario, asiento, precio, fecha_compra) VALUES
+(1, 1, 'A5', 10.50, '2025-05-22 10:00:00'),
+(2, 2, 'B3', 8.75, '2025-05-22 11:00:00');

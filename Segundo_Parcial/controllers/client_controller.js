@@ -49,8 +49,8 @@ const table = document.querySelector("[data-table]");
 clientService
 .listaclientes()
     .then((data)=>{
-    data.forEach(({nombre,email,id}) => {
-                const nuevaLinea= crear_nueva_fila(nombre,email,id)// llamo a 3 referencias
+    data.forEach(({nombre,email,telefono,id}) => {
+                const nuevaLinea= crear_nueva_fila(nombre,email,telefono,id)// llamo a 3 referencias
                 table.appendChild(nuevaLinea)
                 
                 });

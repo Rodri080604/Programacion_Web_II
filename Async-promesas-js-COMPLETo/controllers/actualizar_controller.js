@@ -1,134 +1,91 @@
-/*import { clientService } from "../controllers/client-controller.js"; 
+import { clientService } from "../service/client-service.js";
+const formulario = document.querySelector("[data-form]")
+const obtenerInfo= async()=>{//estructura async
+    const url=new URL(window.location);// nueva url
+    const id= (url.searchParams.get("id"));// url con identificador
+    if(id==null){
+        window.location.href="../screen/error.html"// si no recupera el id pues error 
+    }
+    const nombre = document.querySelector("[data-nombre]")//recuperamos datos
+    const email = document.querySelector("[data-email]")
+try{
+    const perfil = await  clientService.clientes(id)// await que se mantiene en espera mientras almacena el id 
+if(perfil.nombre && perfil.email){
+    nombre.value=perfil.nombre;
+    email.value=perfil.email;
+}else{
+    throw new Error();
+}   
+}catch(error){
+    console.log("Catch error",error);
+    window.location.href="../screens/error.html"
+}
+};
+obtenerInfo();
+
+formulario.addEventListener("submit",(evento)=>{
+    evento.preventDefault();
+    const url = new URL(window.location)
+    const id =(url.searchParams.get("id"));
+
+    const nombre= document.querySelector('[data-nombre]').value;
+    const email= document.querySelector('[data-email]').value;
+    clientService.actualizarCliente(nombre,email,id).then(()=>{
+        window.location.href="../screens/edicion_concluida.html";
+    });
+})
+    
+
+//-----------------------
+/*
+import { clientService } from "../service/client-service.js";
+
 const formulario = document.querySelector("[data-form]");
 
 const obtenerInfo = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    if (!id) {
-        console.error("ID no proporcionado en la URL");
+    
+    if (id == null) {
         window.location.href = "../screens/error.html";
         return;
     }
 
-    const nombre = document.querySelector("[data-nombre]");
-    const email = document.querySelector("[data-email]");
+    const nombreInput = document.querySelector("[data-nombre]");
+    const emailInput = document.querySelector("[data-email]");
 
     try {
         const perfil = await clientService.clientes(id);
-        console.log("Perfil recibido:", perfil);
-        if (!perfil || !perfil.nombre || !perfil.correo) { // Cambiado a minúsculas
-            console.error("Perfil no encontrado o datos incompletos:", perfil);
-            throw new Error("Perfil no encontrado o datos incompletos");
+        
+        if (perfil.nombre && perfil.email) {
+            nombreInput.value = perfil.nombre;
+            emailInput.value = perfil.email;
+        } else {
+            throw new Error("Datos del cliente incompletos");
         }
-        nombre.value = perfil.nombre; // Cambiado a minúsculas
-        email.value = perfil.correo; // Cambiado a minúsculas
     } catch (error) {
-        console.error("Error al cargar perfil:", error.message);
-        alert(`Error al cargar perfil: ${error.message}`);
+        console.error("Error:", error);
         window.location.href = "../screens/error.html";
     }
 };
+
 obtenerInfo();
 
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const nombre = document.querySelector('[data-nombre]').value.trim();
-    const correo = document.querySelector('[data-email]').value.trim();
 
-    if (!nombre || !correo) {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(correo)) {
-        alert("Por favor, ingresa un correo electrónico válido.");
-        return;
-    }
+    const nombre = document.querySelector('[data-nombre]').value;
+    const email = document.querySelector('[data-email]').value;
 
-    clientService.actualizarCliente(nombre, correo, id)
-        .then((respuesta) => {
-            console.log("Respuesta de actualización:", respuesta);
-            if (respuesta.error) {
-                throw new Error(respuesta.error);
-            }
+    clientService.actualizarCliente(nombre, email, id)
+        .then(() => {
             window.location.href = "../screens/edicion_concluida.html";
         })
-        .catch((error) => {
-            console.error("Error al actualizar:", error.message);
-            alert(`Error al actualizar: ${error.message}`);
-            window.location.href = "../screens/error.html";
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Error al actualizar el cliente");
         });
 });
-
-
-
-
 */
-
-
-
-
-
-import { clientService } from "../controllers/client_controller.js"; // Note the underscore
-const formulario = document.querySelector("[data-form]");
-
-const obtenerInfo = async () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
-    if (!id) {
-        console.error("ID no proporcionado en la URL");
-        window.location.href = "../screens/error.html";
-        return;
-    }
-
-    const nombre = document.querySelector("[data-nombre]");
-    const email = document.querySelector("[data-email]");
-
-    try {
-        const perfil = await clientService.clientes(id);
-        if (!perfil || !perfil.nombre || !perfil.correo) {
-            console.error("Perfil no encontrado o datos incompletos:", perfil);
-            throw new Error("Perfil no encontrado o datos incompletos");
-        }
-        nombre.value = perfil.nombre;
-        email.value = perfil.correo;
-    } catch (error) {
-        console.error("Error al cargar perfil:", error.message);
-        alert(`Error al cargar perfil: ${error.message}`);
-        window.location.href = "../screens/error.html";
-    }
-};
-
-if (formulario) {
-    obtenerInfo();
-    formulario.addEventListener("submit", async (evento) => {
-        evento.preventDefault();
-        const url = new URL(window.location);
-        const id = url.searchParams.get("id");
-        const nombre = document.querySelector('[data-nombre]').value.trim();
-        const correo = document.querySelector('[data-email]').value.trim();
-
-        if (!nombre || !correo) {
-            alert("Por favor, completa todos los campos.");
-            return;
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(correo)) {
-            alert("Por favor, ingresa un correo electrónico válido.");
-            return;
-        }
-
-        try {
-            await clientService.actualizarCliente(nombre, correo, id);
-            window.location.href = "../screens/edicion_concluida.html";
-        } catch (error) {
-            console.error("Error al actualizar:", error.message);
-            alert(`Error al actualizar: ${error.message}`);
-            window.location.href = "../screens/error.html";
-        }
-    });
-} else {
-    console.error("Formulario no encontrado");
-}

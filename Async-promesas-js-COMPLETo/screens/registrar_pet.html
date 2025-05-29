@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doguito Petshop | Registrar Mascota</title>
+  <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base/base.css" />
+  <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+  <link rel="stylesheet" href="../assets/css/componentes/card.css" />
+  <link rel="stylesheet" href="../assets/css/register_client.css" />
+  <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
+  <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+</head>
+<body>
+  <header class="header container">
+    <img src="../assets/img/doguitoadm.svg" alt="Logo Doguito" class="header__logo" />
+    <nav>
+      <ul class="header__list-nav">
+        <li class="header__link"><a href="#">Dashboard</a></li>
+        <li class="header__link"><a href="lista_producto.html">Productos</a></li>
+        <li class="header__link"><a href="lista_cliente.html">Clientes</a></li>
+        <li class="header__link"><a href="lista_pet.html">Pets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container flex flex--center flex--column">
+    <section class="card cadastro">
+      <h1 class="card__title">Nueva Mascota</h1>
+      <form class="flex flex--column" data-formulario>
+        <div class="input-container">
+          <input type="text" class="input" placeholder="Nombre" required data-nombre />
+          <label class="input-label">Nombre</label>
+        </div>
+        <div class="input-container">
+          <input type="text" class="input" placeholder="Especie" required data-especie />
+          <label class="input-label">Especie</label>
+        </div>
+        <div class="input-container">
+          <input type="number" class="input" placeholder="Edad" required data-edad />
+          <label class="input-label">Edad</label>
+        </div>
+        <button type="submit" class="button">Registrar</button>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="../controllers/pet_form_controller.js"></script>
+</body>
+</html>

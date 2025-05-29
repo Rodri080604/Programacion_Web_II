@@ -19,11 +19,13 @@
     <link rel="stylesheet" href="../assets/css/register_client.css" />
     <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
     <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <script type="module" src="../controllers/producto-controller.js"></script>
+
   </head>
   <body>
     <header class="header container">
       <img
-        src="../assets/img/doguitoadm.svg"
+        src="./assets/img/doguitoadm.svg"
         alt="Logo Doguito"
         class="header_logo"
       />
@@ -41,43 +43,29 @@
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
         <h1 class="card__title">Registrar un producto</h1>
-        <form action="#" class="flex flex--column">
+        <form class="flex flex--column" data-formulario>
           <div class="input-container">
-            <input
-              name="nombre"
-              id="nombre"
-              class="input"
-              type="text"
-              placeholder="nombre"
-            />
-            <label class="input-label" for="nombre">nombre</label>
+            <input name="nombre" id="nombre" class="input" type="text" placeholder="nombre" data-nombre />
+            <label class="input-label" for="nombre">Nombre</label>
             <span class="input-menssage-error">Error</span>
           </div>
+        
           <div class="input-container register__price-container">
-            <input
-              name="precio"
-              id="precio"
-              class="input"
-              type="text"
-              placeholder="Precio"
-            />
+            <input name="precio" id="precio" class="input" type="text" placeholder="Precio" data-precio />
             <label class="input-label" for="precio">Precio</label>
             <span class="input-menssage-error">Error</span>
           </div>
+        
           <div class="textarea-container register_description-container">
-            <textarea
-              class="textarea register_description"
-              name="description"
-              id="description"
-              placeholder=""
-            ></textarea>
+            <textarea class="textarea register_description" name="description" id="description" placeholder="Descripcion" data-descripcion></textarea>
             <label class="textarea-label" for="description">Descripcion</label>
             <span class="textarea-menssage-error">Error</span>
           </div>
-          <a href="./registro_de_producto_complete.html" class="button"
-            >Registrar producto</a
-          >
+        
+          <button type="submit" class="button">Registrar producto</button>
         </form>
+        <script type="module" src="../controllers/producto_form_controller.js"></script>
+
       </section>
     </main>
   </body>

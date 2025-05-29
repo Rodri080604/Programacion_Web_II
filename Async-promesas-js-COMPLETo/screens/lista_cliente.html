@@ -28,11 +28,12 @@
         class="header__logo"
       />
       <nav>
+
         <ul class="header__list-nav">
           <li class="header__link"><a href="#">Dashboard</a></li>
-          <li class="header__link"><a href="lista_productos.html">Productos</a></li>
+          <li class="header__link"><a href="lista_producto.html">Productos</a></li>
           <li class="header__link"><a href="lista_cliente.html">Clientes</a></li>
-          <li class="header__link"><a href="#">Pets</a></li>
+          <li class="header__link"><a href="lista_pet.html">Pets</a></li>
         </ul>
       </nav>
     </header>
@@ -43,6 +44,8 @@
           <tr>
             <th class="table__column--p">Nombre</th>
             <th class="table__column--g">Email</th>
+            <input type="text" id="buscador" placeholder="Buscar por nombre..." class="input" style="margin-bottom: 20px; width: 300px;">
+
             <th class="table__column--m table__align--right">
               <a
                 href="./registrar_cliente.html"
@@ -72,5 +75,4 @@
     </main>
   </body>
   <script type="module" src="../controllers/client_controller.js"></script>
-  
 </html>

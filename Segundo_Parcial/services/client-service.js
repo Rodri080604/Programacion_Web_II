@@ -10,7 +10,8 @@ const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`; // Me indica la tabla a la q
 const HEADERS = {
     'apikey': SUPABASE_KEY,
     'Authorization': `Bearer ${SUPABASE_KEY}`,
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Prefer': 'return=representation' // Preferencia para obtener la representación del recurso
 }; 
 
 // LLAMADA DEL REST: Funciones de llamado a la API de Supabase
@@ -23,10 +24,14 @@ const listaclientes = () => {
             throw new Error('Error al obtener la lista de clientes');
         }
         return res.json();
-    });
+    })//
+    .catch(error => {
+        console.error('Error al consultar la lista de clientes:', error);
+        throw error;
+    });//
 };
 
-const crearCliente = (nombre, email) => {
+const crearCliente = (nombre, email, telefono) => {
     const clientes = {
         nombre,
         email,
@@ -38,13 +43,19 @@ const crearCliente = (nombre, email) => {
         headers: HEADERS,
         body: JSON.stringify(clientes)
     })
-    .then(async (res) => {
+    .then(res => {
+        if (!res.ok) {
+            throw new Error(`Error al crear el cliente: ${res.statusText}`);
+        }
+        return res.json().then(data => data[0]); // Supabase devuelve un array con el registro creado
+    /*.then(async (res) => {
         if (!res.ok) {
             const text = await res.text();
             throw new Error(text || 'Error al crear el cliente');
         }
         const text = await res.text();
         return text ? JSON.parse(text) : clientes; // Devuelve el cliente creado o el objeto vacío
+        */
     })
     .catch((error) => {
         console.error('Error en la creación del cliente:', error);
